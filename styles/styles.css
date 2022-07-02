@@ -52,7 +52,6 @@ body {
 .page-header {
   display: flex;
   padding: 0 70px;
-  margin: 0 auto;
 }
 
 .navigation-logo {
@@ -141,20 +140,26 @@ body {
   margin: auto;
 }
 
-.navigation-user-content-value {
-  position: absolute;
-  top: 15px;
-  left: 24px;
-  width: 20px;
-  height: 20px;
+.favorites-value {
+  position: relative;
   font-size: 10px;
   line-height: 13px;
-  color: #ffffff;
   text-align: center;
+}
+
+.navigation-user-content-favorites {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  color: #ffffff;
   background-color: #7DB54F;
   content: "";
   border-radius: 10px;
+  top: 15px;
+  left: 25px;
+
 }
+
 
 .button-brown {
   background-color: #756157;
@@ -945,7 +950,7 @@ body {
 
 .htmlacademy-link:hover {
   fill: #756157;
-  }
+}
 
 .htmlacademy-link:active {
   fill: rgba(117, 97, 87, 0.3);
