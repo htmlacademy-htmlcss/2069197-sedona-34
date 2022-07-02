@@ -20,8 +20,6 @@ html {
 
 body {
   margin: 0;
-  display: flex;
-  flex-direction: column;
   min-height: 100%;
   font-family: "PT Sans", sans-serif;
   color: #000000;
@@ -42,8 +40,13 @@ body {
 }
 
 .page-container {
+  display: flex;
+  flex-direction: column;
   width: 1200px;
   margin: 0 auto;
+  min-height: 100%;
+  background-color: #ffffff;
+  box-shadow: 0 0 20px #cccccc;
 }
 
 .page-header {
@@ -54,6 +57,8 @@ body {
 
 .navigation-logo {
   margin-right: 30px;
+  position: absolute;
+  z-index: 1;
 }
 
 .page-header-logo {
@@ -62,6 +67,7 @@ body {
 }
 
 .navigation {
+  margin-left: 169px;
   width: 390px;
 }
 
@@ -71,6 +77,10 @@ body {
   margin: 0;
   padding: 0;
   list-style: none;
+}
+
+.navigation-item {
+  position: relative;
 }
 
 .navigation-item-content {
@@ -83,13 +93,24 @@ body {
   text-decoration: none;
 }
 
+.navigation-item-content-current::before {
+  position: absolute;
+  content: "";
+  height: 2px;
+  right: 17px;
+  left: 17px;
+  bottom: -1px;
+  z-index: 1;
+  background-color: #756257;
+}
+
 .navigation-user {
   margin-left: auto;
-  width: 264px;
 }
 
 .navigation-user-list {
   display: flex;
+  flex-wrap: wrap;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -100,14 +121,39 @@ body {
 }
 
 .navigation-user-content {
+  position: relative;
   display: block;
-  width: 42px;
-  height: 66px;
+  min-width: 42px;
+  min-height: 66px;
   color: #000000;
   font-weight: 700;
   font-size: 20px;
   line-height: 26px;
   text-decoration: none;
+}
+
+.navigation-user-icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+}
+
+.navigation-user-content-value {
+  position: absolute;
+  top: 15px;
+  left: 24px;
+  width: 20px;
+  height: 20px;
+  font-size: 10px;
+  line-height: 13px;
+  color: #ffffff;
+  text-align: center;
+  background-color: #7DB54F;
+  content: "";
+  border-radius: 10px;
 }
 
 .button-brown {
@@ -116,17 +162,21 @@ body {
 }
 
 .navigation-user .button {
-  display: inline-block;
-  width: 160px;
+  display: block;
+  margin: 14px 0;
+  padding: 9px 35px;
   font-weight: 700;
   font-size: 16px;
   line-height: 20px;
   text-transform: uppercase;
   text-decoration: none;
   text-align: center;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
-.main-container {
+.main-index {
   flex-grow: 1;
 }
 
@@ -145,7 +195,6 @@ body {
   position: absolute;
   content: "";
   bottom: 0;
-  left: 0;
   right: 0;
   display: block;
   background-image: url("../images/divider.svg");
@@ -204,6 +253,38 @@ body {
   padding: 0;
   list-style: none;
   display: flex;
+}
+
+.advantages-item-icons {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  min-width: 400px;
+  padding-top: 182px;
+  padding-bottom: 81px;
+}
+
+.advantages-item-icons::before {
+  position: absolute;
+  background-repeat: no-repeat;
+  background-size: 75px 72px;
+  width: 75px;
+  height: 72px;
+  left: 162px;
+  top: 80px;
+  content: "";
+}
+
+.advantages-item-icons:nth-child(1):before {
+  background-image: url("../images/advantage-icon.svg");
+}
+
+.advantages-item-icons:nth-child(2):before {
+  background-image: url("../images/advantage-icon-2.svg");
+}
+
+.advantages-item-icons:nth-child(3):before {
+  background-image: url("../images/advantage-icon-3.svg");
 }
 
 .advantages-item-second {
@@ -279,15 +360,19 @@ body {
 }
 
 .hotel-search .button {
-  display: inline-block;
+  display: block;
+  font-family: inherit;
   align-self: center;
-  padding: 12px 15px;
+  padding: 12px 150px;
   color: #ffffff;
   font-weight: 700;
   font-size: 20px;
   line-height: 36px;
   text-transform: uppercase;
   text-decoration: none;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
 .subscribe {
@@ -326,42 +411,58 @@ body {
 }
 
 .subscribe-button {
-  color: #ffffff;
+  display: inline-block;
+  font-family: inherit;
   font-weight: 700;
   font-size: 20px;
   line-height: 36px;
   text-transform: uppercase;
-  text-decoration: none;
+  color: #ffffff;
+  background-color: #82b3d3;
+  border-radius: 0 4px 4px 0;
+  border: none;
+  padding: 12px 35px;
+  cursor: pointer;
 }
 
 .page-footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0 auto;
   padding: 0 72px;
   min-height: 120px;
 }
 
-.footer-social {
-  max-width: 116px;
-}
-
 .footer-social-list {
   display: flex;
-  flex-wrap: wrap;
   margin: 0;
   margin-left: auto;
   padding: 0;
   list-style: none;
 }
 
-.footer-social-item {
-  margin-right: 26px;
-}
-
 .footer-social-item:nth-child(3n) {
   margin-right: 0;
+}
+
+.footer-social-link {
+  position: relative;
+  display: block;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 47px;
+  height: 40px;
+  outline: 0;
+}
+
+.footer-sociel-icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  fill: #83b3d3;
 }
 
 .footer-phone {
@@ -410,12 +511,34 @@ body {
 }
 
 .breadcrumbs-item {
+  position: relative;
   font-size: 16px;
   line-height: 21px;
+  margin-right: 25px;
 }
 
-.breadcrumbs-link {
-  margin-right: 25px;
+.breadcrumbs-item-home {
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: 12px 12px;
+  left: 2px;
+  top: 1px;
+}
+
+.breadcrumbs-item::after {
+  position: absolute;
+  background-repeat: no-repeat;
+  content: "";
+  background: url("../images/breadcrumbs-divider.svg");
+  background-size: 5px 8px;
+  width: 5px;
+  height: 8px;
+  top: 7px;
+  left: 24px;
+}
+
+.breadcrumbs-item:last-child::after {
+  content: none;
 }
 
 .catalog-filter-forms {
@@ -451,6 +574,7 @@ body {
 }
 
 .catalog-filter-title {
+  padding: 0;
   margin-bottom: 30px;
   font-weight: 700;
   font-size: 20px;
@@ -458,6 +582,10 @@ body {
 }
 
 .catalog-filter-list {
+  display: grid;
+  grid-template-columns: 20px min-content;
+  grid-template-rows: 20px 20px 20px;
+  gap: 15px 19px;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -484,23 +612,32 @@ body {
 }
 
 .catalog-filter-forms .button-blue {
-  width: 160px;
+  display: inline-block;
   color: #ffffff;
   background-color: #82B3D3;
   text-decoration: none;
+  font-family: inherit;
   font-weight: 700;
   font-size: 16px;
   line-height: 20px;
   text-align: center;
   text-transform: uppercase;
+  border: none;
+  border-radius: 4px;
+  padding: 14px 35px;
+  cursor: pointer;
 }
 
 .catalog-filter-forms .reset-button {
-  width: 160px;
+  display: inline-block;
   color: #ffffff;
+  background-color: rgba(131, 179, 211, 0);
+  font-family: inherit;
   font-size: 16px;
   line-height: 20px;
-  text-align: center;
+  border: none;
+  padding: 14px 48px;
+  cursor: pointer;
 }
 
 .catalog {
@@ -538,13 +675,29 @@ body {
 }
 
 .view-button {
+  position: relative;
+  display: block;
   margin-right: 8px;
   width: 48px;
   height: 48px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  border: 2px solid #e5e5e5;
 }
 
 .view-button:nth-child(3) {
   margin-right: 0;
+}
+
+.view-button-table,
+.view-button-slideshow,
+.view-button-list {
+  position: absolute;
+  background-repeat: no-repeat;
+  background-size: 16px 14px;
+  background-position: center;
+  top: 15px;
+  left: 14px;
 }
 
 .hotel-list {
@@ -591,21 +744,55 @@ body {
 }
 
 .hotel-card-button {
+  display: block;
+  font-family: "PT Sans", sans-serif;
   color: #ffffff;
+  padding: 9px 0;
   font-weight: 700;
   font-size: 16px;
   line-height: 20px;
+  text-align: center;
   text-transform: uppercase;
   text-decoration: none;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
 }
 
 .button-green {
   background-color: #7DB54F;
 }
 
+.hotel-card-stars-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.hotel-card-stars {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.hotel-card-stars-icon {
+  margin-right: 6px;
+  min-width: 18px;
+  min-height: 18px;
+  background-image: url("../images/star.svg");
+  background-size: 18px 17px;
+  background-repeat: no-repeat;
+}
+
+.hotel-card-stars-icon:last-child {
+  margin-right: 0;
+}
+
 .hotel-card-rating {
   margin: 0;
+  padding: 9px 22px;
   background-color: #F2F2F2;
+  border-radius: 4px;
   font-size: 16px;
   line-height: 20px;
   text-align: center;
@@ -641,6 +828,7 @@ body {
   font-size: 20px;
   line-height: 36px;
   text-decoration: none;
+  border-radius: 4px;
 }
 
 .pagination-item-current {
@@ -665,4 +853,138 @@ body {
 
 .subscribe-catalog label {
   color: #000000;
+}
+
+.button-brown:hover {
+  background-color: #615048;
+}
+
+.button-brown:active {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.button-brown:focus {
+  background-color: #615048;
+  outline: none;
+}
+
+.button-brown:disabled {
+  background-color: #e5e5e5;
+}
+
+.button-blue:hover {
+  background-color: #68A2CA;
+}
+
+.button-blue:active {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.button-blue:focus {
+  background-color: #68a2ca;
+}
+
+.button-blue:disabled {
+  background-color: #e5e5e5;
+}
+
+.button-green:hover {
+  background-color: #6c9e42;
+}
+
+.button-green:active {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.button-green:focus {
+  background-color: #6c9e42;
+}
+
+.button-green:disabled {
+  background-color: #e5e5e5;
+}
+
+.reset-button:hover {
+  opacity: 60%;
+}
+
+.reset-button:active {
+  opacity: 30%;
+}
+
+.reset-button:focus {
+  outline: 0;
+}
+
+.footer-sociel-icon:hover {
+  fill: #68a2ca;
+}
+
+.footer-sociel-icon:active {
+  fill: #68a2ca;
+  opacity: 30%;
+}
+
+.footer-sociel-icon:focus {
+  fill: #68a2ca;
+}
+
+.footer-phone-link:hover {
+  color: #756157;
+}
+
+.footer-phone-link:active {
+  color: #756157;
+  opacity: 30%;
+}
+
+.footer-phone-link:focus {
+  color: #756157;
+  outline: none;
+}
+
+.htmlacademy-link:hover {
+  fill: #756157;
+  }
+
+.htmlacademy-link:active {
+  fill: rgba(117, 97, 87, 0.3);
+  opacity: 30%;
+}
+
+.htmlacademy-link:focus {
+  fill: #756157;
+}
+
+.breadcrumbs-item:hover {
+  opacity: 60%;
+}
+
+.breadcrumbs-item:active {
+  opacity: 30%;
+}
+
+.view-button:focus {
+  border: 2px solid #000000;
+}
+
+.view-button:hover {
+  border: 2px solid #68a2ca;
+  outline: none;
+}
+
+.view-button:active {
+  border: 2px solid #000000;
+}
+
+.pagination-link:hover:not(.pagination-item-current) {
+  background-color: #68A2CA;
+}
+
+.pagination-link:active:not(.pagination-item-current) {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.pagination-link:focus:not(.pagination-item-current) {
+  background-color: #68a2ca;
 }
