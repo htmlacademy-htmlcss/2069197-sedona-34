@@ -137,6 +137,7 @@ body {
   bottom: 0;
   left: 0;
   margin: auto;
+  fill: #000000;
 }
 
 .favorites-value {
@@ -190,6 +191,7 @@ body {
   justify-content: center;
   padding-top: 51px;
   padding-bottom: 82px;
+  background-color: rgba(131, 179, 211, 0.2);
   background-image: url("../images/index-background.jpg");
   background-repeat: no-repeat;
   background-size: 100% auto;
@@ -243,8 +245,8 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-width: 400px;
-  min-height: 384px;
+  width: 230px;
+  padding: 103px 85px 102px;
 }
 
 .advantages-item-first {
@@ -322,6 +324,8 @@ body {
 }
 
 .advantages-item-blue {
+  padding-top: 92px;
+  padding-bottom: 92px;
   color: #ffffff;
   background-color: #82B3D3;
 }
@@ -385,9 +389,10 @@ body {
 
 .subscribe-index {
   color: #ffffff;
+  background-color: rgba(131, 179, 211, 0.2);
   background-image: url("../images/index-subscribe-background.png");
   background-repeat: no-repeat;
-  background-size: 100% auto;
+  background-size: cover;
 }
 
 .subscribe-title {
@@ -497,6 +502,10 @@ body {
 
 .footer-developer {
   padding-top: 4px;
+}
+
+.htmlacademy-link-icon {
+  fill: #000000;
 }
 
 .modal-container {
@@ -782,9 +791,10 @@ body {
   padding: 70px;
   padding-top: 35px;
   color: #ffffff;
+  background-color: rgba(131, 179, 211, 0.2);
   background-image: url("../images/catalog-background.png");
   background-repeat: no-repeat;
-  background-size: 100% auto;
+  background-size: cover;
 }
 
 .inner-header {
@@ -865,6 +875,10 @@ body {
 .catalog-filter-group-first {
   width: 150px;
   margin-right: 70px;
+}
+
+.catalog-filter-group-second {
+  width: 145px;
 }
 
 .catalog-filter-title {
@@ -1315,6 +1329,34 @@ body {
   background-color: #F2F2F2;
 }
 
+.navigation-item-content:hover {
+  color: #756257;
+}
+
+.navigation-item-content:active {
+  color: #756257;
+  opacity: 30%;
+}
+
+.navigation-item-content:focus {
+  color: #756257;
+  outline: none;
+}
+
+.navigation-user-icon:hover {
+  fill: #756257;
+}
+
+.navigation-user-icon:active {
+  fill: #756257;
+  opacity: 30%;
+}
+
+.navigation-user-icon:focus {
+  fill: #756257;
+  outline: none;
+}
+
 .button-brown:hover {
   background-color: #615048;
 }
@@ -1403,16 +1445,15 @@ body {
   outline: none;
 }
 
-.htmlacademy-link:hover {
+.htmlacademy-link-icon:hover {
   fill: #756157;
 }
 
-.htmlacademy-link:active {
+.htmlacademy-link-icon:active {
   fill: rgba(117, 97, 87, 0.3);
-  opacity: 30%;
 }
 
-.htmlacademy-link:focus {
+.htmlacademy-link-icon:focus {
   fill: #756157;
 }
 
